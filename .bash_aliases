@@ -76,6 +76,15 @@ function cd () {
     fi
 }
 
+# removes comments and duplicates from commands history (saving order)
+function histclr () {
+	local file=~/.bash_history
+	echo "before: `cat $file | wc -l`"
+	tac $file | awk '!x[$0]++' | tac > "$file.new"
+	mv "$file.new" $file
+	sed -i /^#/d $file
+	echo "after: `cat $file | wc -l`"
+}
 
 # user dependant
 if [ $UID -ne 0 ]; then
