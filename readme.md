@@ -3,6 +3,8 @@ User home directory
 
 ## Installation ##
 
+Init an empty repository, link it with the existing repository, get metadata, force checkout and set the upstream branch:
+
 ```bash
 cd
 git init
