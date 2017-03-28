@@ -50,6 +50,7 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias gta='git tag -a -m'
+alias git.home='git --git-dir=$HOME/.config/git/home --work-tree=$HOME'
 
 # general functions
 function mkdr () { mkdir "$@" && cd "$_"; }

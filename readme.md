@@ -16,14 +16,20 @@ git fetch
 git checkout -ft origin/master
 ```
 
+Separate .git from working tree:
+
+```bash
+mkdir -p .config/git
+mv .git .config/git/home
+```
+
 
 ## Update ##
 
 Get metadata from a remote repository, verify the difference and apply:
 
 ```bash
-cd
-git fetch
-git diff ..origin/master
-git pull
+git.home fetch
+git.home diff ..origin/master
+git.home pull
 ```
