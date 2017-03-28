@@ -1,5 +1,16 @@
-dotfiles
-========
+User home directory
+===================
+
+## Installation ##
+
+```bash
+cd
+git init
+git remote add origin https://github.com/tuxcfg/home.git
+git fetch
+git checkout -ft origin/master
+```
+
 
 ## Deployment ##
 
