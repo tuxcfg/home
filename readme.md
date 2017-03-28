@@ -14,6 +14,18 @@ git checkout -ft origin/master
 ```
 
 
+## Update ##
+
+Get metadata from a remote repository, verify the difference and apply:
+
+```bash
+cd
+git fetch
+git diff ..origin/master
+git pull
+```
+
+
 ## Deployment ##
 
 ```bash
