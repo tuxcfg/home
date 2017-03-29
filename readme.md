@@ -19,8 +19,8 @@ git checkout -ft origin/master
 Separate .git from working tree:
 
 ```bash
-mkdir -p .config/git
-mv .git .config/git/home
+mkdir -p ~/.config/git
+mv ~/.git ~/.config/git/home
 ```
 
 
@@ -29,7 +29,7 @@ mv .git .config/git/home
 Get metadata from a remote repository, verify the difference and apply:
 
 ```bash
-git.home fetch
-git.home diff ..origin/master
-git.home pull
+git-home fetch
+git-home diff ..origin/master
+git-home pull
 ```

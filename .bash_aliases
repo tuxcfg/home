@@ -34,24 +34,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # media file info
 alias mediameta="mplayer -vo null -ao null -identify -frames 0 -v"
 
-# Git
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gb='git branch'
-alias gc='git checkout'
-alias gf='git reflog'
-alias gma='git commit -am'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias git.home='git --git-dir=$HOME/.config/git/home --work-tree=$HOME'
-
 # general functions
 function mkdr () { mkdir "$@" && cd "$_"; }
 
@@ -102,3 +84,34 @@ alias agar='apt autoremove'
 alias agu='apt update && apt upgrade'
 alias acs='\apt search'
 alias aci='\apt show'
+
+
+# git
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gb='git branch'
+alias gc='git checkout'
+alias gf='git reflog'
+alias gma='git commit -am'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias git-home='git --git-dir=$HOME/.config/git/home --work-tree=$HOME'
+
+# load rules
+source /usr/share/bash-completion/completions/git
+
+# add autocompletion for aliases
+__git_complete git-home __git_main
+
+# add alias only if repo is present
+if [ -d "$HOME/.config/git/etc" ]; then
+	alias git-etc='git --git-dir=$HOME/.config/git/etc --work-tree=/etc'
+	__git_complete git-etc __git_main
+fi
