@@ -20,6 +20,9 @@ alias myip="curl ipinfo.io"
 alias ping="ping -c 5" # stop after sending count ECHO_REQUEST packets
 alias wget="wget -c" # can resume downloads
 alias a="aria2c"
+
+# port 8000 without parameters
+# set 0 to use random port
 alias serve="python3 -m http.server"
 
 # always enable colored grep output
