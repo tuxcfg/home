@@ -18,8 +18,8 @@ git checkout -ft origin/master
 Separate `.git` from working tree:
 
 ```bash
-dir="${XDG_CONFIG_HOME:-$HOME/.config}/git"
-mkdir -p $dir && mv .git "$dir/home"
+dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg"
+mkdir -p "$dir" && mv .git "$dir/home"
 ```
 
 
