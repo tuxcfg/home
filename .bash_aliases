@@ -113,8 +113,3 @@ source /usr/share/bash-completion/completions/git
 # add autocompletion for aliases
 __git_complete git-home __git_main
 
-# add alias only if repo is present
-if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/etc" ]; then
-	alias git-etc='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/etc" --work-tree=/etc'
-	__git_complete git-etc __git_main
-fi
