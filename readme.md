@@ -1,7 +1,6 @@
 User home directory files
 =========================
 
-
 ## Installation ##
 
 > **Note:** all existing files will be overwritten!
@@ -16,11 +15,11 @@ git fetch
 git checkout -ft origin/master
 ```
 
-Separate .git from working tree:
+Separate `.git` from working tree:
 
 ```bash
-mkdir -p ~/.config/git
-mv ~/.git ~/.config/git/home
+dir="${XDG_CONFIG_HOME:-$HOME/.config}/git"
+mkdir -p $dir && mv .git "$dir/home"
 ```
 
 
@@ -31,5 +30,5 @@ Get metadata from a remote repository, verify the difference and apply:
 ```bash
 git-home fetch
 git-home diff ..origin/master
-git-home pull
+git-home merge
 ```

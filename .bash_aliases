@@ -105,7 +105,7 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias gta='git tag -a -m'
-alias git-home='git --git-dir=$HOME/.config/git/home --work-tree=$HOME'
+alias git-home='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/git/home" --work-tree=$HOME'
 
 # load rules
 source /usr/share/bash-completion/completions/git
@@ -114,7 +114,7 @@ source /usr/share/bash-completion/completions/git
 __git_complete git-home __git_main
 
 # add alias only if repo is present
-if [ -d "$HOME/.config/git/etc" ]; then
-	alias git-etc='git --git-dir=$HOME/.config/git/etc --work-tree=/etc'
+if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/git/etc" ]; then
+	alias git-etc='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/git/etc" --work-tree=/etc'
 	__git_complete git-etc __git_main
 fi
