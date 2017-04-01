@@ -61,7 +61,7 @@ function get_git_info {
     if [[ $branch ]]; then
         local output="\001$bldylw\002$branch"
         local status=`git status --porcelain | cut -c1,2 | tr " " - | sort -u | paste -sd "," -`
-        local topush=`git log --oneline @{u}.. | wc -l`
+        local topush=`git log --oneline @{u}.. 2> /dev/null | wc -l`
 
         # MM, ??, !! and so on
         if [[ $status ]]; then
