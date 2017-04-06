@@ -87,7 +87,7 @@ set convert-meta off
 "\e[A": history-search-backward
 
 # Ctrl+enter - exec current command with time
-"\C-j": "\C-atime \C-m"
+#"\C-j": "\C-atime \C-m"
 
 # Alt+S - prefix the line with sudo
 "\es": "\C-asudo \C-e"
