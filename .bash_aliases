@@ -21,6 +21,9 @@ alias ping="ping -c 5" # stop after sending count ECHO_REQUEST packets
 alias wget="wget -c" # can resume downloads
 alias a="aria2c"
 
+# apply current dir from mc to the shell on exit
+alias mc='. /usr/lib/mc/mc-wrapper.sh'
+
 # port 8000 without parameters
 # set 0 to use random port
 alias serve="python3 -m http.server"
@@ -112,4 +115,3 @@ source /usr/share/bash-completion/completions/git
 
 # add autocompletion for aliases
 __git_complete git-home __git_main
-
