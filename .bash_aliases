@@ -19,6 +19,7 @@ alias ports="netstat -tulanp" # quickly list all TCP/UDP port on the server
 alias myip="curl ipinfo.io"
 alias ping="ping -c 5" # stop after sending count ECHO_REQUEST packets
 alias wget="wget -c" # can resume downloads
+alias tmux="tmux -2u" # force 256 colors and UTF-8 support
 alias a="aria2c"
 
 # apply current dir from mc to the shell on exit
