@@ -60,7 +60,7 @@ function mkfile () {
 # directory navigation history
 function cd () {
     if [[ $1 ]]; then
-        pushd $1 > /dev/null
+        pushd "$1" > /dev/null
     else
         pushd ~ > /dev/null
     fi
