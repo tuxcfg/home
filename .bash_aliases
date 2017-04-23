@@ -45,7 +45,7 @@ alias mediameta="mplayer -vo null -ao null -identify -frames 0 -v"
 function mkdr () { mkdir "$@" && cd "$_"; }
 
 # console calc
-function =  () { echo "$*" | bc -l; }
+function = () { echo "$*" | bc -l; }
 function py () { python -c "print $*"; }
 
 # file creation
@@ -111,8 +111,11 @@ alias gcl='git clone'
 alias gta='git tag -a -m'
 alias git-home='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/home" --work-tree=$HOME'
 
-# load rules
-source /usr/share/bash-completion/completions/git
+# apply git autocompletion for alias
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    # source
+    . /usr/share/bash-completion/completions/git
 
-# add autocompletion for aliases
-__git_complete git-home __git_main
+    # add autocompletion
+    __git_complete git-home __git_main
+fi
