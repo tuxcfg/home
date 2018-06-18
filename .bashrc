@@ -24,6 +24,9 @@ export TIMEFORMAT=$'\e[0;30m\e[47mreal:%Rs user:%Us sys:%Ss cpu:%P%%\e[0m'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# 
+export TERM=xterm-256color
+
 # prompt customization
 . ~/.bash_prompt
 
