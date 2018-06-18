@@ -68,21 +68,21 @@ function cd () {
 
 # removes comments and duplicates from commands history (saving order)
 function histclr () {
-	local file=~/.bash_history
-	echo "before: `cat $file | wc -l`"
-	tac $file | awk '!x[$0]++' | tac > "$file.new"
-	mv "$file.new" $file
-	sed -i /^#/d $file
-	echo "after: `cat $file | wc -l`"
+    local file=`tempfile`
+    echo "before: `cat $HISTFILE | wc -l`"
+    tac $HISTFILE | awk '!x[$0]++' | tac > $file
+    mv $file $HISTFILE
+    sed -i /^#/d $HISTFILE
+    echo "after: `cat $HISTFILE | wc -l`"
 }
 
 # user dependant
 if [ $UID -ne 0 ]; then
     # normal user
-	alias apt='sudo apt'
-	alias reboot='sudo reboot'
-	alias suspend='sudo suspend'
-	alias poweroff='sudo poweroff'
+    alias apt='sudo apt'
+    alias reboot='sudo reboot'
+    alias suspend='sudo suspend'
+    alias poweroff='sudo poweroff'
 fi
 
 alias agi='apt install'

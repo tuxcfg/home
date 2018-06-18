@@ -10,9 +10,6 @@ shopt -s checkwinsize
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# move history file from home root
-HISTFILE="${XDG_CONFIG_HOME:-$HOME/.config}/bash.history"
-
 # don't put duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
 
