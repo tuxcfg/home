@@ -74,6 +74,8 @@ function histclr () {
     mv $file $HISTFILE
     sed -i /^#/d $HISTFILE
     echo "after: `cat $HISTFILE | wc -l`"
+    # reset history for current session
+    history -c && history -r
 }
 
 # user dependant
