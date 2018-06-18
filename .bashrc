@@ -14,8 +14,8 @@ shopt -s histappend
 HISTCONTROL=ignoreboth
 
 # setting history length
-HISTSIZE=50000
-HISTFILESIZE=50000
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # builtin time command output format
 export TIMEFORMAT=$'\e[0;30m\e[47mreal:%Rs user:%Us sys:%Ss cpu:%P%%\e[0m'
@@ -24,7 +24,7 @@ export TIMEFORMAT=$'\e[0;30m\e[47mreal:%Rs user:%Us sys:%Ss cpu:%P%%\e[0m'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# 
+# support 256 colors
 export TERM=xterm-256color
 
 # prompt customization
