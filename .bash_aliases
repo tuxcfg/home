@@ -12,7 +12,7 @@ alias ..="cd .."
 alias ...="cd ../../../"
 alias ....="cd ../../../../"
 alias vi=vim
-alias svi='sudo vi'
+alias svi="sudo vi"
 alias mnt="mount | column -t"
 alias pwdgen="openssl rand -base64 20"
 alias ports="netstat -tulanp" # quickly list all TCP/UDP port on the server
@@ -21,10 +21,10 @@ alias ping="ping -c 5" # stop after sending count ECHO_REQUEST packets
 alias wget="wget -c" # can resume downloads
 alias tmux="tmux -2u" # force 256 colors and UTF-8 support
 alias a="aria2c"
-alias untar='tar -zxvf'
+alias untar="tar -zxvf"
 
 # apply current dir from mc to the shell on exit
-alias mc='. /usr/lib/mc/mc-wrapper.sh'
+alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
 # port 8000 without parameters
 # set 0 to use random port
@@ -71,7 +71,7 @@ function cd () {
 function histclr () {
     local file=`tempfile`
     echo "before: `cat $HISTFILE | wc -l`"
-    tac $HISTFILE | awk '!x[$0]++' | tac > $file
+    tac $HISTFILE | awk "!x[$0]++" | tac > $file
     mv $file $HISTFILE
     sed -i /^#/d $HISTFILE
     echo "after: `cat $HISTFILE | wc -l`"
@@ -82,36 +82,36 @@ function histclr () {
 # user dependant
 if [ $UID -ne 0 ]; then
     # normal user
-    alias apt='sudo apt'
-    alias reboot='sudo reboot'
-    alias suspend='sudo suspend'
-    alias poweroff='sudo poweroff'
+    alias apt="sudo apt"
+    alias reboot="sudo reboot"
+    alias suspend="sudo suspend"
+    alias poweroff="sudo poweroff"
 fi
 
-alias agi='apt install'
-alias agr='apt remove'
-alias agar='apt autoremove'
-alias agu='apt update && apt upgrade'
-alias acs='\apt search'
-alias aci='\apt show'
+alias agi="apt install"
+alias agr="apt remove"
+alias agar="apt autoremove"
+alias agu="apt update && apt upgrade"
+alias acs="\apt search"
+alias aci="\apt show"
 
 
 # git
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gb='git branch'
-alias gc='git checkout'
-alias gf='git reflog'
-alias gma='git commit -am'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
+alias ga="git add"
+alias gp="git push"
+alias gl="git log"
+alias gs="git status"
+alias gd="git diff"
+alias gm="git commit -m"
+alias gb="git branch"
+alias gc="git checkout"
+alias gf="git reflog"
+alias gma="git commit -am"
+alias gra="git remote add"
+alias grr="git remote rm"
+alias gpu="git pull"
+alias gcl="git clone"
+alias gta="git tag -a -m"
 alias git-home='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/home" --work-tree=$HOME'
 
 # apply git autocompletion for alias
