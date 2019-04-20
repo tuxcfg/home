@@ -25,7 +25,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # support 256 colors
-export TERM=xterm-256color
+if [ -z "$TMUX" ]; then export TERM=xterm-256color; fi
 
 # prompt customization
 . ~/.bash_prompt
