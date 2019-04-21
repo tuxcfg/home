@@ -32,3 +32,9 @@ git-home fetch
 git-home diff ..origin/master
 git-home merge
 ```
+
+Alternatively you can apply changes without checking:
+
+```bash
+git-home pull
+```
