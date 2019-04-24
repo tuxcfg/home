@@ -114,6 +114,13 @@ alias gcl="git clone"
 alias gta="git tag -a -m"
 alias git-home='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/home" --work-tree=$HOME'
 
+
+# docker
+alias dnpm='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine npm'
+alias dnpx='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine npx'
+alias dnode='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine node'
+
+
 # apply git autocompletion for alias
 if [ -f /usr/share/bash-completion/completions/git ]; then
     # source
