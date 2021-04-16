@@ -117,8 +117,8 @@ alias git-home='git --git-dir="${XDG_CONFIG_HOME:-$HOME/.config}/tuxcfg/home" --
 
 # docker
 alias dnpm='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine npm'
-alias dnpx='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine npx'
-alias dnode='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app node:lts-alpine node'
+alias dnpx='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app --network=host node:lts-alpine npx'
+alias dnode='docker run -it --rm -u=$UID:$(id -g "$USER") -v "$PWD":/app -w /app --network=host node:lts-alpine node'
 
 
 # apply git autocompletion for alias
